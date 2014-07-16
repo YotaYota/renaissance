@@ -23,6 +23,9 @@ public abstract class GameObject {
 		this.height = height;
 	}
 
+    /**
+     * ObjectIds are defined in ObjectId enum.
+     */
 	protected ObjectId id;
 	protected float velX = 0, velY = 0;
 
