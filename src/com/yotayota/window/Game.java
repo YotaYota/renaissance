@@ -119,7 +119,7 @@ public class Game extends Canvas implements Runnable {
 		 * Beginning of game-drawing code.
 		 */
 		
-		g.setColor(new Color(25, 25, 25));
+		g.setColor(new Color(45, 25, 45));
 		g.fillRect(0, 0, getWidth(), getHeight());
 		
 		g2d.translate(cam.getX(), cam.getY()); // begin of camera
