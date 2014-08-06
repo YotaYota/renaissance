@@ -17,9 +17,9 @@ public class Player extends GameObject {
 	private int speed = 5;
 	private Color playerColor = Color.BLUE;
 	/**
-	 * @return facing of the entity. For facingX, 1 is defined as right and -1
-	 *         is defined as left. For facingY, 1 is defined as up and -1 is
-	 *         defined as down.
+	 * facing of the entity. For facingX, 1 is defined as right and -1 is
+	 * defined as left. For facingY, 1 is defined as up and -1 is defined as
+	 * down.
 	 */
 	private int facingX = 1;
 	private int facingY = 0;
