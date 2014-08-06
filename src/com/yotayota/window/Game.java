@@ -19,6 +19,8 @@ public class Game extends Canvas implements Runnable {
 
 	public static int HEIGHT = 800;
 	public static int WIDTH = 600;
+	public static int levelHeight;
+	public static int levelWidth;
 
 	private boolean running = false;
 	private Thread thread;
@@ -83,12 +85,17 @@ public class Game extends Canvas implements Runnable {
 		loader = new BufferedImageLoader();
 		BufferedImage levelImg = loader.loadImage("/level.png");
 
+		levelWidth = levelImg.getWidth() * 8;
+		System.out.println(levelWidth);
+		levelHeight = levelImg.getHeight() * 8;
+		System.out.println(levelHeight);
+
 		handler = new Handler();
 		handler.loadLevelFromImage(levelImg);
 
-		cam = new Camera(WIDTH/2, HEIGHT/2);
-		Player playerOne = new Player(10, 10, new InputHandler(this), handler, cam,
-				ObjectId.Player);
+		cam = new Camera(WIDTH / 2, HEIGHT / 2);
+		Player playerOne = new Player(10, 10, new InputHandler(this), handler,
+				cam, ObjectId.Player);
 
 		handler.addObject(playerOne);
 	}
@@ -118,10 +125,10 @@ public class Game extends Canvas implements Runnable {
 		/**
 		 * Beginning of game-drawing code.
 		 */
-		
+
 		g.setColor(new Color(45, 25, 45));
 		g.fillRect(0, 0, getWidth(), getHeight());
-		
+
 		g2d.translate(cam.getX(), cam.getY()); // begin of camera
 
 		handler.render(g);

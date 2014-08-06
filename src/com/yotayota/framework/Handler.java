@@ -10,6 +10,7 @@ import com.yotayota.entities.Gate;
 import com.yotayota.entities.Player;
 import com.yotayota.entities.Star;
 import com.yotayota.entities.Tree;
+import com.yotayota.window.Game;
 
 /**
  * Contains a LinkedList with each entity of the game, where each entity is a
@@ -129,6 +130,14 @@ public class Handler {
 		// Bullet collision
 		iterObjOne: for (int i = 0; i < objects.size(); i++) {
 			GameObject objOne = objects.get(i);
+			
+			// x and y out of bounds
+			if ((objOne.x > Game.levelWidth || objOne.y > Game.levelHeight)
+					|| (objOne.x < 0 || objOne.y < 0)) {
+				removeObject(objOne);
+				continue;
+				// TODO: set i = i-1 ??
+			}
 
 			// Only check collision for Bullet objects.
 			if (objOne.getId() != ObjectId.Bullet)

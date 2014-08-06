@@ -24,7 +24,7 @@ public abstract class GameObject {
 	}
 
     /**
-     * ObjectIds are defined in ObjectId enum. david testar shiet...
+     * ObjectIds are defined in ObjectId enum.
      */
 	protected ObjectId id;
 	protected float velX = 0, velY = 0;
@@ -34,10 +34,7 @@ public abstract class GameObject {
 		this.y = y;
 		this.id = id;
 	}
-
-    /**
-     * Yolobaby
-     */
+	
 	public abstract void tick();
 
 	public abstract void render(Graphics g);
